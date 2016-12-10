@@ -1,0 +1,75 @@
+﻿@model IEnumerable<JobSearchTracking.Models.Position>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Interview.InterviewOutcome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PositionName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PositionDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResumeSent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyResponse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResponseDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interview.InterviewOutcome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PositionName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PositionDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResumeSent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyResponse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResponseDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PositionID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PositionID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PositionID })
+        </td>
+    </tr>
+}
+
+</table>
